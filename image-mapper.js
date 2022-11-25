@@ -101,17 +101,6 @@ fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&a
             return yScale(d['close']);
         });
 
-        const movingAverageLine = d3
-        .line()
-        .x(d => {
-            return xScale(d['date']);
-        })
-        .y(d => {
-            return yScale(d['average']);
-        })
-        .curve(d3.curveBasis);
-
-
         svg
         .append('path')
         .data([data]) // binds data to the line
